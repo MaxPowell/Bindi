@@ -16,6 +16,9 @@ db.<collection_name>.find()
 Remove all documents from a collection:
 db.<collection_name>.remove({})
 
+Show roles and permissions:
+db.getRoles({showPrivileges:true})
+
 ---------------------------
 
 SCRIPTS:
