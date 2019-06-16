@@ -1,0 +1,4 @@
+Heart rate: 74 bpm
+Skin temperature: 35
+Skin conductivity: 0.5
+GPS: 40.417277,-3.7638738
