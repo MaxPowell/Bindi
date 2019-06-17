@@ -2,7 +2,7 @@
 sudo mongod --sslMode requireSSL --sslPEMKeyFile /home/ubuntu/Desktop/certificates/db.pem --auth --port 27017 --dbpath /var/lib/mongodb --sslCAFile /home/ubuntu/Desktop/certificates/rootCA.pem
 
 2. Connect to mongo server:
-mongo --ssl --sslCAFile rootCA.pem --sslAllowInvalidHostnames --sslPEMKeyFile /home/ubuntu/Desktop/certificates/admin.pem --username admin
+mongo --ssl --sslCAFile /home/ubuntu/Desktop/certificates/rootCA.pem --sslAllowInvalidHostnames --sslPEMKeyFile /home/ubuntu/Desktop/certificates/admin.pem --username admin
 mongo --ssl --sslCAFile rootCA.pem --sslAllowInvalidHostnames --sslPEMKeyFile /home/ubuntu/Desktop/certificates/client_5caf1a66c851ddf9100f9182.pem --username client_5caf1a66c851ddf9100f9182
 
 3. Useful commands:
