@@ -63,7 +63,7 @@ path_CA_cert="/home/ubuntu/Desktop/certificates/rootCA.pem"
 path_client_cert="/home/ubuntu/Desktop/certificates/ml.pem"
 
 # Connect to the database
-client = pymongo.MongoClient(username="ml", password="password", ssl=True, ssl_ca_certs=path_CA_cert, ssl_certfile=path_client_cert, ssl_keyfile=path_client_cert, ssl_match_hostname=False)
+client = pymongo.MongoClient(username="CN=ML,OU=ML,O=Bindi,L=Madrid,ST=Spain,C=ES", authMechanism="MONGODB-X509", ssl=True, ssl_ca_certs=path_CA_cert, ssl_certfile=path_client_cert, ssl_keyfile=path_client_cert, ssl_match_hostname=False)
 
 
 ##########################
