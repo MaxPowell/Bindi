@@ -2,6 +2,9 @@
 import socket, ssl, os
 import rfc3161ng #timestamp
 
+root_certificate_path = "/home/ubuntu/Desktop/certificates/rootCA.pem"
+client_certificate_path = "/home/ubuntu/Desktop/certificates/client_5caf1a66c851ddf9100f9182.pem"
+client_certificate_key_path = "/home/ubuntu/Desktop/certificates/client_5caf1a66c851ddf9100f9182.key"
 
 def send_file(file_path, file_size, name, socket):
 	# Send file info
@@ -33,8 +36,8 @@ print("Loaded timestamp: %s (%d B)" % (ts_name, ts_size))
 host = '127.0.0.1'
 port = 443
 context = ssl.SSLContext(ssl.PROTOCOL_TLS_CLIENT)
-context.load_verify_locations("/home/ubuntu/Desktop/certificates/rootCA.pem") # CA to verify server
-context.load_cert_chain("/home/ubuntu/Desktop/certificates/client_5caf1a66c851ddf9100f9182.pem", "/home/ubuntu/Desktop/certificates/client_5caf1a66c851ddf9100f9182.key") # cert of the client
+context.load_verify_locations(root_certificate_path) # CA to verify server
+context.load_cert_chain(client_certificate_path, client_certificate_key_path) # cert of the client
 
 # WRAP SOCKET
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM, 0) as sock:
